@@ -27,8 +27,6 @@ void setup() {
   // initialize the serial port:
   Serial.begin(9600);
 
-  //set LED as output
-  pinMode(ledPin, OUTPUT);
   
 }
 void loop() {
