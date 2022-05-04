@@ -1,6 +1,6 @@
 #include <Stepper.h>
-#define STEPS 2048 //2048 steps
 
+const int STEPS = 2048;
 int ADC_pin = 26; //GPIO 26 for 
 int val = 0;
 int prev = 0;
