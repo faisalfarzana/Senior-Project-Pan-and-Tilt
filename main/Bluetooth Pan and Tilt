@@ -1,19 +1,17 @@
 #include <Stepper.h>
 #include <Ps3Controller.h>
 
-
-#define STEPS 200 // the number of steps in one revolution of your motor (28BYJ-48)
 const int step_pin_x = 14; //Step Pin for X direction
 const int step_pin_y = 27; //Step Pin for Y direction
 const int dir_pin_x = 32; //Direction Pin for X direction
 const int dir_pin_y = 33; //Direction Pin for Y direction
 
 
-Stepper stepper_x(STEPS, step_pin_x, dir_pin_x); //Create stepper_x object
-Stepper stepper_y(200, step_pin_y, dir_pin_y); //Create stepper_y object
+Stepper stepper_x(200, step_pin_x, dir_pin_x); //Create stepper_x object and with 200 steps (one revolution)
+Stepper stepper_y(200, step_pin_y, dir_pin_y); //Create stepper_y object and with 200 steps (one revolution)
 
 
-void notify() //Function to read button/analog stick on serial monitor
+void notify() //This function is used to test the controller inputs on the serial monitor.
 {
     //--- Digital cross/square/triangle/circle button events ---
     if( Ps3.event.button_down.cross )
