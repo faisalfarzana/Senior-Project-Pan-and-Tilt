@@ -36,14 +36,6 @@ void notify() //This function is used to test the controller inputs on the seria
        Serial.print(" y="); Serial.print(Ps3.data.analog.stick.ry, DEC);
        Serial.println();
    }
-
-   //---- Analog cross/square/triangle/circle button events ----
-
-   if( abs(Ps3.event.analog_changed.button.cross) ){
-       Serial.print("Pressing the cross button: ");
-       Serial.println(Ps3.data.analog.button.cross, DEC);
-   }
-
    }
 void onConnect(){
     Serial.println("Connected.");
