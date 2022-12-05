@@ -11,36 +11,19 @@ Stepper stepper_x(200, step_pin_x, dir_pin_x); //Create stepper_x object and wit
 Stepper stepper_y(200, step_pin_y, dir_pin_y); //Create stepper_y object and with 200 steps (one revolution)
 
 
-void notify() //This function is used to test the controller inputs on the serial monitor.
+void test() //This function is used to test the controller inputs on the serial monitor.
 {
-    //--- Digital cross/square/triangle/circle button events ---
-    if( Ps3.event.button_down.cross )
-        Serial.println("Started pressing the cross button");
-    if( Ps3.event.button_up.cross )
-        Serial.println("Released the cross button");
-
-      if( Ps3.event.button_down.l3 )
-        Serial.println("Started pressing the left stick button");
-
-    //---------------- Analog stick value events ---------------
-   if( abs(Ps3.event.analog_changed.stick.lx) + abs(Ps3.event.analog_changed.stick.ly) > 2 ){
-       Serial.print("Moved the left stick:");
+   /*if( abs(Ps3.event.analog_changed.stick.lx) + abs(Ps3.event.analog_changed.stick.ly) > 2 ) //Tests left analog stick
+   {
+       Serial.print("Left analog stick is moving:");
        Serial.print(" x="); Serial.print(Ps3.data.analog.stick.lx, DEC);
        Serial.print(" y="); Serial.print(Ps3.data.analog.stick.ly, DEC);
        Serial.println();
-    }
-
-   if( abs(Ps3.event.analog_changed.stick.rx) + abs(Ps3.event.analog_changed.stick.ry) > 2 ){
-       Serial.print("Moved the right stick:");
-       Serial.print(" x="); Serial.print(Ps3.data.analog.stick.rx, DEC);
-       Serial.print(" y="); Serial.print(Ps3.data.analog.stick.ry, DEC);
-       Serial.println();
-   }
-   }
-void onConnect(){
+    }*/
+}
+void onConnect(){ //Prints "Connected if Bluetooth connection is successful
     Serial.println("Connected.");
 }
-
 
 void setup() {
 
